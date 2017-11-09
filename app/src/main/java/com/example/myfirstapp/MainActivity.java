@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "Делим на пустое поле? :)", Toast.LENGTH_SHORT);
                     toast.show();
+                    return;
                 } finally {
                     textview.setText("");
 
@@ -228,13 +229,14 @@ public class MainActivity extends AppCompatActivity {
                     textview.setText(""+currentResult);
                 } else if (selectedAction == '/') {
                       if (displayValue == 0) {
+                          textview.setText("");
+                          selectedAction = ' ';
+                          displayValue = 0;
+                          currentResult = 0;
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Деление на ноль!", Toast.LENGTH_SHORT);
                         toast.show();
-                      textview.setText("");
-                        selectedAction = ' ';
-                        displayValue = 0;
-                        currentResult = 0;
+
                     }
                     else if (displayValue != 0){
                         currentResult/=displayValue;
