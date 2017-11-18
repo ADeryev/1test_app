@@ -1,10 +1,11 @@
 package com.example.myfirstapp;
 
 
-import android.app.AlertDialog;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,14 +14,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public  static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-    private String dispFieldText;
+    private String dispFieldText="";
     private double displayValue=0;
     private double currentResult=0;
     private char selectedAction=' ';
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final TextView textview = findViewById(R.id.TextView);
 
    // метод для передачи текста в другую activity
    /* public void sendMessage(View view) {
@@ -31,13 +35,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }  */
 
-        final TextView textview = findViewById(R.id.TextView);
-        dispFieldText = "";
         final Button button0 = findViewById(R.id.button0);
          button0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"0");
+
             }
         });
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"1");
+
             }
         });
 
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"2");
+
             }
         });
 
@@ -62,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"3");
+
             }
         });
 
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"4");
+
             }
         });
 
@@ -78,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"5");
+
             }
         });
 
@@ -86,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"6");
+
+
             }
         });
 
@@ -94,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"7");
+
             }
         });
 
@@ -102,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"8");
+
             }
         });
 
@@ -110,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispFieldText = textview.getText().toString();
                 textview.setText(dispFieldText+"9");
+
             }
         });
 
@@ -125,9 +138,11 @@ public class MainActivity extends AppCompatActivity {
                     } catch (NumberFormatException e1) {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Пустое поле, операция невозможна", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     } finally {
                         textview.setText("");
+
                     }
                 }
             }
@@ -145,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (NumberFormatException e1) {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Пустое поле, операция невозможна", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     } finally {
                         textview.setText("");
@@ -165,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (NumberFormatException e1) {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Пустое поле, операция невозможна", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     } finally {
                         textview.setText("");
@@ -185,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (NumberFormatException e1) {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Пустое поле, операция невозможна", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     }   finally {
                         textview.setText("");
@@ -212,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (NumberFormatException e1) {
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "Делим на пустое поле? :)", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                     return;
                 } finally {
@@ -235,6 +254,7 @@ public class MainActivity extends AppCompatActivity {
                           currentResult = 0;
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Деление на ноль!", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
 
                     }
@@ -254,4 +274,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
